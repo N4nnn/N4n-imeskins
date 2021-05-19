@@ -1,0 +1,38 @@
+# Trime default style settings
+# encoding: utf-8
+
+config_version: "for零+主题"
+name: 零+ [候选栏]
+# 本主题依附于零+主题使用，下面__include: 之后紧跟的就是主题名
+# 如使用本主题，零+主题名应为：trime.yaml；如零+主题名为：零+.trime.yaml，则需在本文件内查找“__include: trime”替换为“__include: 零+.trime”
+author: 鳳凰院凶真
+style:
+  __include: 零+.trime:/style
+  comment_on_top: true #候选窗和状态栏提示在上方true或右侧false
+  candidate_padding: 20 #候选项内边距
+  candidate_spacing: -10 #候选间距
+  candidate_view_height: 25 #候选区高度
+  layout:
+     elevation: 0 #悬浮窗阴影
+     spacing: 0 #悬浮窗位置偏移
+     border: 0 #悬浮窗边框
+     position: fixed #悬浮窗位置
+     round_corner: 0 #候选窗口圆角
+     alpha: 200 #透明度(0-255)
+  window:
+      - {start: "", composition: "%s", letter_spacing: 0} #letter_spacing需要Android5.0。TODO: 不为0时，会导致不换行的问题
+android_keys:
+  __include: 零+.trime:/android_keys
+preset_keys:
+  __include: 零+.trime:/preset_keys
+  LuaTheme1: {label: ☑, send: function, command: '切换主题.lua', option: "《《命令行》》【【零+.trime】】"}#主题名称为自定义项,无后缀名yaml
+fallback_colors:
+  __include: 零+.trime:/fallback_colors
+preset_color_schemes:
+  __include: 零+.trime:/preset_color_schemes
+preset_keyboards:
+  __include: 零+.trime:/preset_keyboards
+  menu:
+    __include: 零+.trime:/preset_keyboards/menu
+    __patch:
+        "keys/@5/click": LuaTheme1

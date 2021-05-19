@@ -1,0 +1,35 @@
+patch:
+#默认主键盘
+  "preset_keyboards/default/keys/@35": 
+  "preset_keyboards/default/keys/@36": 
+  "preset_keyboards/default/keys/@37": 
+  "preset_keyboards/default/keys/@38": 
+  "preset_keyboards/default/keys/@39": 
+  "preset_keyboards/default/keys/@40": 
+  "preset_keyboards/default/keys/@41": 
+  "preset_keyboards/default/keys/@42": 
+#数字
+  "preset_keyboards/number/keys/@29": 
+  "preset_keyboards/number/keys/@30": 
+  "preset_keyboards/number/keys/@31": 
+  "preset_keyboards/number/keys/@32": 
+#编辑
+  "preset_keyboards/use/keys/@20": 
+#选单
+  "preset_keyboards/menu/keys/@22": 
+  "preset_keyboards/menux/keys/@22": 
+#符号
+  "preset_keyboards/menu/keys/@50": 
+  "preset_keyboards/symbolsCN/keys/@50": 
+  "preset_keyboards/symbolsCN/keys/@51": 
+  "preset_keyboards/symbolsCN/keys/@52": 
+  "preset_keyboards/symbolsEN/keys/@50": 
+  "preset_keyboards/symbolsEN/keys/@51": 
+  "preset_keyboards/symbolsEN/keys/@52": 
+  "preset_keyboards/emoji/keys/@50": 
+  "preset_keyboards/symbolsTS/keys/@50": 
+  "preset_keyboards/symbolsXH/keys/@50": 
+#选项键盘
+  "preset_keyboards/xrxl/keys/@25": 
+
+  
