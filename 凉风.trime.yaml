@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 # ====Done====
-config_version: '0.1'
+config_version: '0.2'
 name: 凉风
 author: 'zzzsy' 
 
@@ -53,7 +53,7 @@ fallback_colors:
   #悬浮窗
   border_color: back_color 
   hilited_back_color: text_back_color
-  hilited_candidate_back_color: hcb
+  hilited_candidate_back_color: C_kb
   hilited_text_color: hilited_key_text_color
   text_back_color: key_back_color
   label_color: candidate_text_color
@@ -82,48 +82,48 @@ fallback_colors:
   #shift键常态及功能键
   off_key_back_color: key_back_color
   hilited_off_key_back_color: hilited_key_back_color
-  off_key_text_color: szt
+  off_key_text_color: C_okt #off_key_text_color
   hilited_off_key_text_color: off_key_text_color 
-  C_Q: AAA 
-  C_W: AAA
-  C_E: AAA
-  C_R: AAA
-  C_T: AAA
-  C_Y: AAA
-  C_U: AAA
-  C_I: AAA
-  C_O: AAA
-  C_P: AAA
-  C_S: AAA
-  C_D: AAA
-  C_F: AAA
-  C_G: AAA
-  C_H: AAA
-  C_J: AAA
-  C_K: AAA
-  C_L: AAA
-  C_Z: AAA
-  C_X: AAA
-  C_C: AAA
-  C_V: AAA
-  C_B: AAA
-  C_N: AAA
-  C_M: AAA
+  C_Q: C_A 
+  C_W: C_A
+  C_E: C_A
+  C_R: C_A
+  C_T: C_A
+  C_Y: C_A
+  C_U: C_A
+  C_I: C_A
+  C_O: C_A
+  C_P: C_A
+  C_S: C_A
+  C_D: C_A
+  C_F: C_A
+  C_G: C_A
+  C_H: C_A
+  C_J: C_A
+  C_K: C_A
+  C_L: C_A
+  C_Z: C_A
+  C_X: C_A
+  C_C: C_A
+  C_V: C_A
+  C_B: C_A
+  C_N: C_A
+  C_M: C_A
   C_hkb: key_text_color
   shb: szb
   bdb: szb
   zbd: bdb
-  kgb: AAA
+  kgb: C_A
   ybd: bdb
   hsb: szb
-  hcb: szb
-  hst: szt
-  kgt: szt
-  bdt: szt
+  C_kb: szb
+  hst: C_okt
+  kgt: C_okt
+  bdt: C_okt
   bds: szs
-  Ykgt: hcb
+  Ykgt: C_kb
   fhb: szb #符号 导航键背景
-  fhxzb: hcb #符号 导航选中键背景
+  fhxzb: C_kb #符号 导航选中键背景
 
 # ====Doing====
 conf: 
@@ -204,10 +204,10 @@ preset_color_schemes:
     kgt: 0xffF7971E
     hsb: 0xbb333743
     szb: 0xbb4E5162
-    szt: 0xff888888
+    C_okt: 0xff888888
     C_fkb: 0xFF333743   #功能键背景
     C_fkt: 0x88ffffff   #功能键字色
-    hcb: 0xffF7971E
+    C_kb: 0xffF7971E
     hct: *C_black_1
 
 # --------键盘布局--------
@@ -263,11 +263,11 @@ preset_keyboards:
       - {click: m, long_click: ":", key_back_color: C_M}
       - {click: BackSpace, key_text_size: 12, swipe_up: "~", key_back_color: hsb, key_text_color: hst, width: 15}
       # 4
-      - {height: *MS_skh, click: "q_sz", key_text_size: 14, has_menu: Page_Down, long_click: q_xd, key_back_color: szb, key_text_color: szt, key_symbol_color: szs, width: 18}
+      - {height: *MS_skh, click: "q_sz", key_text_size: 14, has_menu: Page_Down, long_click: q_xd, key_back_color: szb, key_text_color: C_okt, key_symbol_color: szs, width: 18}
       - {click: ",", label: "  ，", key_text_size: 12, paging: Page_Up, long_click: "!", swipe_up: "!", key_back_color: zbd, key_text_color: bdt, key_symbol_color: bds, width: 13}
       - {click: space, ascii: space1, key_text_size: 12, long_click: VOICE_ASSIST, swipe_left: Left, swipe_right: Right, key_back_color: kgb, key_text_color: kgt, width: 38}
       - {click: ".", label: " 。", key_text_size: 12, long_click: "?", swipe_up: "?", key_back_color: ybd, key_text_color: bdt, key_symbol_color: bds, width: 13}
-      - {click: Return, key_text_size: 14, long_click: Color_settings1, swipe_up: Theme_settings, key_back_color: hcb, key_text_color: hct, key_symbol_color: hct, width: 18}
+      - {click: Return, key_text_size: 14, long_click: Color_settings1, swipe_up: Theme_settings, key_back_color: C_kb, key_text_color: hct, key_symbol_color: hct, width: 18}
       # 增高行
       - {height: *ML_ah, width: 100}
       - {height: *ML_ah, click: Left, key_text_size: 13, width: 18}
@@ -287,6 +287,66 @@ preset_keyboards:
         "keys/@32/key_text_color": Ykgt
     name: "英文键盘"
   '''
+
+  # ----法语键盘----
+  # ====Doing====
+  KB_fr:
+    author: zzzsy
+    ascii_mode: 1
+    height: *
+    horizontal_gap: *
+    vertical_gap: *
+    round_corner: *
+    key_text_offset_y: *
+    keys:
+      # 2
+      - {click: a, swipe_down: 1, key_back_color: C_Q}
+      - {click: z, swipe_down: 2, key_back_color: C_W}
+      - {click: e, swipe_down: 3, key_back_color: C_E}
+      - {click: r, swipe_down: 4, key_back_color: C_R}
+      - {click: t, swipe_down: 5, key_back_color: C_T}
+      - {click: y, swipe_down: 6, key_back_color: C_Y}
+      - {click: u, swipe_down: 7, key_back_color: C_U}
+      - {click: i, swipe_down: 8, key_back_color: C_I}
+      - {click: o, swipe_down: 9, key_back_color: C_O}
+      - {click: p, swipe_down: 0, key_back_color: C_P}
+      # 3
+      - {click: q, long_click: "@", key_back_color: C_A}
+      - {click: s, long_click: "^", key_back_color: C_S}
+      - {click: d, long_click: "·", key_back_color: C_D}
+      - {click: f, long_click: " ", key_back_color: C_F}
+      - {click: g, long_click: " ", key_back_color: C_G}
+      - {click: h, long_click: "_", key_back_color: C_H}
+      - {click: j, long_click: "#", key_back_color: C_J}
+      - {click: k, long_click: '"', key_back_color: C_K, swipe_left: KBT_num_right}
+      - {click: l, long_click: "'", key_back_color: C_L}
+      - {click: m, long_click: "'", key_back_color: C_L}
+      # 4
+      - {click: K_Shift, key_text_size: 14, composing: Escape, swipe_up: Candidate_switch, key_back_color: shb, key_text_color: SHt, width: 15}
+      - {click: w, long_click: select_all, key_back_color: C_Z}
+      - {click: x, long_click: cut, key_back_color: C_X}
+      - {click: c, long_click: copy, key_back_color: C_C}
+      - {click: v, long_click: paste, key_back_color: C_V}
+      - {click: b, long_click: "'", key_back_color: C_B}
+      - {click: n, long_click: "/", key_back_color: C_N}
+      - {click: "'", long_click: ":", key_back_color: C_M}
+      - {click: BackSpace, key_text_size: 12, swipe_up: "~", key_back_color: hsb, key_text_color: hst, width: 15}
+      # 5
+      - {height: *MS_skh, click: "q_sz", key_text_size: 14, has_menu: Page_Down, long_click: q_xd, key_back_color: szb, key_text_color: C_okt, key_symbol_color: szs, width: 18}
+      - {click: ",", label: " ，", key_text_size: 12, paging: Page_Up, long_click: "!", swipe_up: "!", key_back_color: zbd, key_text_color: bdt, key_symbol_color: bds, width: 13}
+      - {click: Fançais, ascii: space1, key_text_size: 12, long_click: VOICE_ASSIST, swipe_left: Left, swipe_right: Right, key_back_color: kgb, key_text_color: kgt, width: 38}
+      - {click: ".", label: " 。", key_text_size: 12, long_click: "?", swipe_up: "?", key_back_color: ybd, key_text_color: bdt, key_symbol_color: bds, width: 13}
+      - {click: Return, key_text_size: 14, long_click: Color_settings1, swipe_up: Theme_settings, key_back_color: C_kb, key_text_color: hct, key_symbol_color: hct, width: 18}
+      # 增高行
+      - {height: *ML_ah, width: 100}
+      - {height: *ML_ah, click: Left, key_text_size: 13, width: 18}
+      - {click: Right, key_text_size: 13, width: 18}
+      - {width: 46}
+      - {click: Hide, key_back_color: 0x00, width: 18}
+    name: "法语键盘"
+    width: 10
+  
+
   # ----单手数字键盘·右----
   # ====Done====
   KBT_num_right:
@@ -374,3 +434,7 @@ preset_keyboards:
       - {height: *, key_back_color: 0x00, width: 100}
     name: "单手数字·左"
     width: 12
+preset_keys:
+  
+  K_back: {label: "返回", functional: false, send: Eisu_toggle, select: .last_lock}
+  K_backSpace: {label: "〈——— ", preview: ⌫, repeatable: true, send: BackSpace}
