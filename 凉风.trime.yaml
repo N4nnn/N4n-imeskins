@@ -281,12 +281,7 @@ preset_keyboards:
   KB_en:
     __include: /preset_keyboards/default
     ascii_mode: 1
-    '''__patch:
-        "keys/@32/swipe_up": KB_ywfh
-        "keys/@32/long_click": KB_ywfh
-        "keys/@32/key_text_color": Ykgt
-    name: "英文键盘"
-  '''
+
 
   # ----法语键盘----
   # ====Doing====
