@@ -37,6 +37,29 @@ parms:
     2: &O_ksX 3   #key_symbol_offset_x
     3: &O_ktY 0   #key_text_offset_y
     4: &O_khY -1  #key_hint_offset_y
+conf:
+  default:
+    ascii_mode: 0
+    lock: true
+    height: *MS_h
+    horizontal_gap: *ML_hg
+    vertical_gap: *ML_vg
+    round_corner: *MS_rc
+    key_text_offset_y: *O_ktY
+    key_symbol_offset_y: *O_ksY
+    key_press_offset_x: 0
+    key_press_offset_y: 3
+    key_symbol_offset_x: *O_ksX
+    keyboard_back_color: Dback
+    label_transform: uppercase # 中文 字母大写，none
+  KBT_num:
+    ascii_mode: 1
+    height: *TS_h
+    horizontal_gap: *TL_hg
+    vertical_gap: *TL_vg
+    round_corner: *TS_rc
+    key_text_offset_y: *O_ktY
+
 
 # ====Doing====
 colors:
@@ -126,36 +149,22 @@ fallback_colors:
   fhxzb: C_kb #符号 导航选中键背景
 
 # ====Doing====
-conf: 
-  main:
-    height: 48           #按键高度
-    horizontal_gap: *ML_hg    #按键水平距离
-    vertical_gap: *ML_vg      #按键行距
-    round_corner: 15     #圆角
-    # 字符坐标
-    key_symbol_offset_x: 3     #上标 横坐标
-    key_symbol_offset_y: 0.5   #上标 纵坐标
-    key_hint_offset_y: -1
-    key_press_offset_x: 2
-    key_press_offset_y: 2
-  num:
-    height: 60 #按键高度
-    key_press_offset_x: 2
-    key_press_offset_y: 2
-    keys/+:
-      - width: 0 #底部留白开关
-        height: 1 #底部留白
-      # 符号、颜文字键盘
-  sym_height: 50 #按键高度
-  menu_height: 41 #菜单高度
-  sym_bottom_switch: 0 #底部留白开关
-  sym_bottom: 1 #底部留白
-  sym_long_text_size: 20 #长标签字号
 style:
   color_scheme: schemem_A              #默认主题
   horizonal: true                      #水平模式
   reset_ascii_mode: false              #显示键盘时重置为中文状态
   speech_opencc_config: s2t.json       #语音输入时的繁简转换
+  auto_caps: false
+  latin_locale: en_US
+  locale: zh_CN
+  keyboards:
+    __append:
+      - default
+      - KB_en
+      - KB_fr
+      - KBT_num_left
+      - KBT_num_right
+
 
 # --------配色--------
 preset_color_schemes:
@@ -214,20 +223,8 @@ preset_color_schemes:
 # ====Doing====
 preset_keyboards:
   default:
-    ascii_mode: 0
     author: "zzzsy"
-    lock: true
-    height: *MS_h
-    horizontal_gap: *ML_hg
-    vertical_gap: *ML_vg
-    round_corner: *MS_rc
-    key_text_offset_y: *O_ktY
-    key_symbol_offset_y: *O_ksY
-    key_press_offset_x: 0
-    key_press_offset_y: 3
-    key_symbol_offset_x: *O_ksX
-    keyboard_back_color: Dback
-    label_transform: uppercase # 中文 字母大写，none
+    __patch: conf/default
     keys:
       # 1
       - {click: q, long_click: 1, swipe_down: 1, key_back_color: C_Q}
@@ -346,12 +343,7 @@ preset_keyboards:
   # ====Done====
   KBT_num_right:
     author: zzzsy
-    ascii_mode: 1
-    height: *TS_h
-    horizontal_gap: *TL_hg
-    vertical_gap: *TL_vg
-    round_corner: *TS_rc
-    key_text_offset_y: *O_ktY
+    __patch: conf/KBT_num
     keys:
       # 1
       - {width: 40}
@@ -390,12 +382,7 @@ preset_keyboards:
   # ====Dong====
   KBT_num_left:
     author: zzzsy
-    ascii_mode: 1
-    height: *MS_h
-    horizontal_gap: *ML_hg
-    vertical_gap: *ML_vg
-    round_corner: *MS_rc
-    key_text_offset_y: *O_ktY
+    __patch: conf/KBT_num
     keys:
       # 1
       - {click: "+", key_text_size: 13, key_text_color: C_fkt, key_back_color: C_fkb}
