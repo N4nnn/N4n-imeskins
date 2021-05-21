@@ -59,6 +59,13 @@ conf:
     vertical_gap: *TL_vg
     round_corner: *TS_rc
     key_text_offset_y: *O_ktY
+  KB_fr:
+    ascii_mode: 1
+    height: *
+    horizontal_gap: *
+    vertical_gap: *
+    round_corner: *
+    key_text_offset_y: *
 
 
 # ====Doing====
@@ -224,7 +231,7 @@ preset_color_schemes:
 preset_keyboards:
   default:
     author: "zzzsy"
-    __patch: conf/default
+    __include: conf/default
     keys:
       # 1
       - {click: q, long_click: 1, swipe_down: 1, key_back_color: C_Q}
@@ -284,40 +291,34 @@ preset_keyboards:
   # ====Doing====
   KB_fr:
     author: zzzsy
-    ascii_mode: 1
-    height: *
-    horizontal_gap: *
-    vertical_gap: *
-    round_corner: *
-    key_text_offset_y: *
     keys:
       # 2
-      - {click: a, swipe_down: 1, key_back_color: C_Q}
+      - {click: a, swipe_down: 1, key_back_color: C_Q, popup: ["à", "á", "æ", "ä"]}
       - {click: z, swipe_down: 2, key_back_color: C_W}
-      - {click: e, swipe_down: 3, key_back_color: C_E}
+      - {click: e, swipe_down: 3, key_back_color: C_E, popup: ["ê", "è", "é", "ë"]}
       - {click: r, swipe_down: 4, key_back_color: C_R}
       - {click: t, swipe_down: 5, key_back_color: C_T}
       - {click: y, swipe_down: 6, key_back_color: C_Y}
-      - {click: u, swipe_down: 7, key_back_color: C_U}
-      - {click: i, swipe_down: 8, key_back_color: C_I}
-      - {click: o, swipe_down: 9, key_back_color: C_O}
+      - {click: u, swipe_down: 7, key_back_color: C_U, popup: ["ü", "ù", "û"]}
+      - {click: i, swipe_down: 8, key_back_color: C_I, popup: ["ï", "î", "í"]}
+      - {click: o, swipe_down: 9, key_back_color: C_O, popup: ["ö", "ô", "œ", "ø"]}
       - {click: p, swipe_down: 0, key_back_color: C_P}
       # 3
       - {click: q, long_click: "@", key_back_color: C_A}
-      - {click: s, long_click: "^", key_back_color: C_S}
-      - {click: d, long_click: "·", key_back_color: C_D}
-      - {click: f, long_click: " ", key_back_color: C_F}
-      - {click: g, long_click: " ", key_back_color: C_G}
-      - {click: h, long_click: "_", key_back_color: C_H}
-      - {click: j, long_click: "#", key_back_color: C_J}
-      - {click: k, long_click: '"', key_back_color: C_K, swipe_left: KBT_num_right}
-      - {click: l, long_click: "'", key_back_color: C_L}
-      - {click: m, long_click: "'", key_back_color: C_L}
+      - {click: s, long_click: "#", key_back_color: C_S}
+      - {click: d, long_click: "$", key_back_color: C_D}
+      - {click: f, long_click: "_", key_back_color: C_F}
+      - {click: g, long_click: "&", key_back_color: C_G}
+      - {click: h, long_click: "-", key_back_color: C_H}
+      - {click: j, long_click: "+", key_back_color: C_J}
+      - {click: k, long_click: '(', key_back_color: C_K, swipe_left: KBT_num_right}
+      - {click: l, long_click: ")", key_back_color: C_L}
+      - {click: m, long_click: "/", key_back_color: C_L}
       # 4
       - {click: K_Shift, key_text_size: 14, composing: Escape, swipe_up: Candidate_switch, key_back_color: shb, key_text_color: SHt, width: 15}
       - {click: w, long_click: select_all, key_back_color: C_Z}
       - {click: x, long_click: cut, key_back_color: C_X}
-      - {click: c, long_click: copy, key_back_color: C_C}
+      - {click: c, long_click: copy, key_back_color: C_C, popup: ["ç"]}
       - {click: v, long_click: paste, key_back_color: C_V}
       - {click: b, long_click: "'", key_back_color: C_B}
       - {click: n, long_click: "/", key_back_color: C_N}
